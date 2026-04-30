@@ -1,0 +1,31 @@
+{
+  "default_search": "ddg",
+  "search_engines": {
+    "mynixos": {
+      "name": "My NixOS",
+      "template": "https://mynixos.com/search?q={searchTerms}",
+      "aliases": ["@nx"]
+    },
+    "gopkg": {
+      "name": "go packages",
+      "template": "https://pkg.go.dev/search?q={searchTerms}",
+      "aliases": ["@pkgo"]
+    }
+  },
+  "extensions": [
+    "ublock-origin",
+    "privacy-badger",
+    "cookie-editor",
+    "auto-tab-discard",
+    "decentraleyes",
+    "adaptive-tab-bar-colour",
+    "sponsorblock"
+  ],
+  "mods": [
+    "642854b5-88b4-4c40-b256-e035532109df",
+    "e122b5d9-d385-4bf8-9971-e137809097d0",
+    "5941aefd-67b0-453d-9b62-9071a31cbb0d",
+    "a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec"
+  ]
+}
+

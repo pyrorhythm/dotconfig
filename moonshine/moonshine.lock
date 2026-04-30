@@ -1,0 +1,8 @@
+generated_at: 2026-04-29T17:11:35.525709Z
+mode: companion
+packages:
+    brew:
+        - name: node
+          version: ""
+          source: brew
+          installed_at: 2026-04-29T17:11:35.52542Z

@@ -1,0 +1,59 @@
+brew:
+    - direnv
+    - gcc
+    - mas
+    - mise
+    - nmap
+    - protolint
+    - ruff
+    - carapace
+    - fzf
+    - gh
+    - just
+    - rust
+    - name: just-lsp
+      tap: terror/tap
+    - zsh-autosuggestions
+    - cmake
+    - ninja
+    - pyrefly
+    - name: qt
+      brew_version: "5"
+    - tree
+    - zlib
+    - libvorbis
+    - minikube
+    - name: openjdk
+      brew_version: "21"
+    - yq
+    - zsh-syntax-highlighting
+    - buf
+    - flac
+    - make
+    - p7zip
+    - git
+    - gnupg
+    - nixfmt
+    - name: bun
+      tap: oven-sh/bun
+    - goreleaser
+    - jq
+    - libpq
+    - oh-my-posh
+    - portaudio
+    - tmux
+    - uv
+    - go
+    - qt
+    - zoxide
+    - zsh
+    - name: moonshine
+      tap: pyrorhythm/tap
+    - node
+    - name: borders
+      tap: felixkratz/formulae
+    - name: sketchybar
+      tap: felixkratz/formulae
+    - sf-symbols
+    - nowplaying-cli
+    - fastfetch

@@ -1,0 +1,44 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-i": "editor::GoToImplementation"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-z": "pane::GoBack"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-enter": [
+        "terminal::SendText",
+        "\u001b\r"
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-`": "workspace::NewTerminal"
+    },
+    "unbind": {
+      "ctrl-~": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-q": "editor::Format"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "cmd-shift-i": "editor::Format"
+    }
+  }
+]

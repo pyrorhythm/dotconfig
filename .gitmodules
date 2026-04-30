@@ -1,0 +1,3 @@
+[submodule "sketchybar/riftapi"]
+	path = sketchybar/riftapi
+	url = git@github.com:pyrorhythm/riftapi.git
