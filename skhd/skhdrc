@@ -46,11 +46,6 @@ alt + shift - 6 : @ytospc("6")
 
 alt - tab : yabai -m space --focus recent
 
-alt + shift - left  : @yinsert("west")
-alt + shift - right : @yinsert("east")
-alt + shift - up    : @yinsert("north")
-alt + shift - down  : @yinsert("south")
-
 alt + ctrl - e : yabai -m space --balance
 
 alt + shift - space        : yabai -m window --toggle float --grid 6:6:1:1:4:4
