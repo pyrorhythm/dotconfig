@@ -13,7 +13,7 @@ local function _popup_item_name(target)
 end
 
 local function _is_popup_drawing(item_name)
-	local query = SBAR.query(item_name)
+	local query = Sbar.query(item_name)
 	if query == nil or query.popup == nil then
 		return false
 	end
@@ -29,7 +29,7 @@ local function _is_popup_drawing(item_name)
 	return false
 end
 
-local system_watcher = SBAR.add("item", {
+local system_watcher = Sbar.add("item", {
 	drawing = false,
 })
 
@@ -48,7 +48,7 @@ POPUP_TOGGLE = function(name)
     end
 
     local currently_open = _is_popup_drawing(popup_name)
-    SBAR.set(popup_name, { popup = { drawing = not currently_open } })
+    Sbar.set(popup_name, { popup = { drawing = not currently_open } })
 end
 
 POPUP_TOGGLE_CLJ = function(name)
@@ -63,7 +63,7 @@ POPUP_OFF = function(name)
 		return
 	end
 
-	SBAR.set(popup_name, { popup = { drawing = false } })
+	Sbar.set(popup_name, { popup = { drawing = false } })
 end
 
 POPUP_ON = function(name)
@@ -72,7 +72,7 @@ POPUP_ON = function(name)
 		return
 	end
 
-	SBAR.set(popup_name, { popup = { drawing = true } })
+	Sbar.set(popup_name, { popup = { drawing = true } })
 end
 
 IS_EMPTY = function(s)
@@ -130,7 +130,7 @@ DELAY = function(seconds, callback)
 		return
 	end
 
-	SBAR.delay(duration, callback)
+	Sbar.delay(duration, callback)
 end
 
 COLOR_TO_HEX = function(color)
@@ -161,10 +161,10 @@ SHELL_QUOTE = function(value)
 end
 
 CLEAR_POPUP_ITEMS = function(item_name)
-	local query = SBAR.query(item_name)
+	local query = Sbar.query(item_name)
 	if query.popup and next(query.popup.items) ~= nil then
 		for _, child in pairs(query.popup.items) do
-			SBAR.remove(child)
+			Sbar.remove(child)
 		end
 	end
 end
@@ -183,7 +183,7 @@ end
 ---@param frames integer
 SETUP_POPUP_ANIMATE = function(item, curve, frames)
     item:subscribe("mouse.clicked", function()
-        SBAR.animate(curve, frames, POPUP_TOGGLE_CLJ(item))
+        Sbar.animate(curve, frames, POPUP_TOGGLE_CLJ(item))
     end)
 end
 
@@ -221,7 +221,7 @@ SETUP_STANDARD_CLICKS = function(item, update_trigger_name)
 		if env.BUTTON == "left" then
 			POPUP_TOGGLE(env.NAME)
 		elseif env.BUTTON == "right" and update_trigger_name then
-			SBAR.trigger(update_trigger_name)
+			Sbar.trigger(update_trigger_name)
 		end
 	end)
 end
@@ -230,5 +230,5 @@ EXEC_IF_AWAKE = function(command, callback)
 	if IS_SYSTEM_SLEEPING then
 		return
 	end
-	SBAR.exec(command, callback)
+	Sbar.exec(command, callback)
 end

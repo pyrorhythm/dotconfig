@@ -169,7 +169,7 @@ local function _schedule_flush()
 		return
 	end
 	flush_scheduled = true
-	SBAR.delay(flush_seconds, function()
+	Sbar.delay(flush_seconds, function()
 		flush_scheduled = false
 		_flush_buffer()
 		if _total_buffered_entries() > 0 then

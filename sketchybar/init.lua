@@ -2,15 +2,19 @@ os.execute("[ ! -d $HOME/.local/share/sketchybar_lua/ ] && (git clone https://gi
 
 os.execute("[ ! -d $HOME/.local/share/rift.lua/ ] && (git clone https://github.com/acsandmann/rift.lua.git /tmp/rift.lua && cd /tmp/rift.lua/ && make install && rm -rf /tmp/rift.lua/)")
 
-package.cpath = package.cpath .. ";/Users/" .. os.getenv("USER") .. "/.local/share/sketchybar_lua/?.so" .. ";/Users/" .. os.getenv("USER") .. "/.local/share/rift.lua/?.so"
+local HOME = os.getenv("HOME")
+package.cpath = package.cpath
+    .. ";" .. HOME .. "/.local/share/sketchybar_lua/?.so"
+    .. ";" .. HOME .. "/.local/share/rift.lua/?.so"
 
+---@type SbarModule
+Sbar = require("sketchybar")
 
-SBAR = require("sketchybar")
-
-SBAR.begin_config()
+Sbar.begin_config()
+Sbar.hotload(true)
 require("helpers.utils")
 require("bar")
 require("default")
 require("items")
-SBAR.end_config()
-SBAR.event_loop()
+Sbar.end_config()
+Sbar.event_loop()

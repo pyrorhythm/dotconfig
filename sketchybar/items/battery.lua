@@ -2,7 +2,7 @@ local icons = require("icons")
 local colors = require("colors")
 local settings = require("settings")
 
-local battery = SBAR.add("item", "widgets.battery", {
+local battery = Sbar.add("item", "widgets.battery", {
   position = "right",
   icon = {
     font = {
@@ -16,7 +16,7 @@ local battery = SBAR.add("item", "widgets.battery", {
   popup = { align = "center" }
 })
 
-local remaining_time = SBAR.add("item", {
+local remaining_time = Sbar.add("item", {
   position = "popup." .. battery.name,
   icon = {
     string = "Time remaining:",
@@ -32,7 +32,7 @@ local remaining_time = SBAR.add("item", {
 
 
 battery:subscribe({"routine", "power_source_change", "system_woke"}, function()
-  SBAR.exec("pmset -g batt", function(batt_info)
+  Sbar.exec("pmset -g batt", function(batt_info)
     local icon = "!"
     local label = "?"
 
@@ -80,7 +80,7 @@ battery:subscribe("mouse.clicked", function(env)
   battery:set( { popup = { drawing = "toggle" } })
 
   if drawing == "off" then
-    SBAR.exec("pmset -g batt", function(batt_info)
+    Sbar.exec("pmset -g batt", function(batt_info)
       local found, _, remaining = batt_info:find(" (%d+:%d+) remaining")
       local label = found and remaining .. "h" or "No estimate"
       remaining_time:set( { label = label })
@@ -88,12 +88,12 @@ battery:subscribe("mouse.clicked", function(env)
   end
 end)
 
-SBAR.add("bracket", "widgets.battery.bracket", { battery.name }, {
+Sbar.add("bracket", "widgets.battery.bracket", { battery.name }, {
   background = { color         = colors.bg05,
   border_color  = colors.bg1, border_width = 1 }
 })
 
-SBAR.add("item", "widgets.battery.padding", {
+Sbar.add("item", "widgets.battery.padding", {
   position = "right",
   width = settings.group_paddings
 })

@@ -10,21 +10,15 @@ brew:
     - fzf
     - gh
     - just
-    - rust
     - name: just-lsp
       tap: terror/tap
     - zsh-autosuggestions
     - cmake
     - ninja
     - pyrefly
-    - name: qt
-      brew_version: "5"
     - tree
     - zlib
     - libvorbis
-    - minikube
-    - name: openjdk
-      brew_version: "21"
     - yq
     - zsh-syntax-highlighting
     - buf
@@ -57,3 +51,6 @@ brew:
     - sf-symbols
     - nowplaying-cli
     - fastfetch
+    - sourcegit
+    - neovim
+    - nvm

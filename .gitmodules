@@ -1,3 +1,7 @@
 [submodule "sketchybar/riftapi"]
 	path = sketchybar/riftapi
 	url = git@github.com:pyrorhythm/riftapi.git
+
+[submodule "sketchybar/yabaiapi"]
+	path = sketchybar/yabaiapi
+	url = git@github.com:pyrorhythm/yabaiapi.git

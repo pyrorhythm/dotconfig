@@ -27,7 +27,7 @@ end if
 ' 2>/dev/null || echo 'stopped|||'
 ]]
 
-local media_cover  = SBAR.add("item", "media.cover", {
+local media_cover  = Sbar.add("item", "media.cover", {
     position   = "right",
     drawing    = false,
     icon       = { drawing = false },
@@ -46,7 +46,7 @@ local media_cover  = SBAR.add("item", "media.cover", {
     },
 })
 
-local media_artist = SBAR.add("item", "media.artist", {
+local media_artist = Sbar.add("item", "media.artist", {
     position = "right",
     drawing  = false,
     padding_left  = 8,
@@ -62,7 +62,7 @@ local media_artist = SBAR.add("item", "media.artist", {
     },
 })
 
-local media_title  = SBAR.add("item", "media.title", {
+local media_title  = Sbar.add("item", "media.title", {
     position = "right",
     drawing  = false,
     padding_left  = 8,
@@ -76,7 +76,7 @@ local media_title  = SBAR.add("item", "media.title", {
     },
 })
 
-local mbracket     = SBAR.add("bracket", "media.bracket", {
+local mbracket     = Sbar.add("bracket", "media.bracket", {
     media_artist.name,
     media_title.name,
     media_cover.name,
@@ -93,7 +93,7 @@ local mbracket     = SBAR.add("bracket", "media.bracket", {
 })
 
 
-local popup_cover = SBAR.add("item", {
+local popup_cover = Sbar.add("item", {
     position   = "popup." .. mbracket.name,
     background = {
         image = {
@@ -107,19 +107,19 @@ local popup_cover = SBAR.add("item", {
 
 })
 
-local bwd = SBAR.add("item", {
+local bwd = Sbar.add("item", {
     position     = "popup." .. mbracket.name,
     icon         = { string = icons.media.back },
     label        = { drawing = false },
     click_script = "osascript -e 'tell application \"Spotify\" to previous track'",
 })
-local pp = SBAR.add("item", {
+local pp = Sbar.add("item", {
     position     = "popup." .. mbracket.name,
     icon         = { string = icons.media.play_pause },
     label        = { drawing = false },
     click_script = "osascript -e 'tell application \"Spotify\" to playpause'",
 })
-local fwd = SBAR.add("item", {
+local fwd = Sbar.add("item", {
     position     = "popup." .. mbracket.name,
     icon         = { string = icons.media.forward },
     label        = { drawing = false },
@@ -161,7 +161,7 @@ local function set_artwork(url)
         "curl -sL %q -o %q && echo ok",
         url, ARTWORK_PATH
     )
-    SBAR.exec(cmd, function(out)
+    Sbar.exec(cmd, function(out)
         if out and out:match("ok") then
             media_cover:set({
                 background = {
@@ -182,7 +182,7 @@ local function set_artwork(url)
 end
 
 local function refresh()
-    SBAR.exec(SCRIPT, function(raw)
+    Sbar.exec(SCRIPT, function(raw)
         if not raw then return end
         raw = raw:gsub("%s+$", "")
 
@@ -191,7 +191,7 @@ local function refresh()
 
         local playing = state == "playing"
 
-        SBAR.animate("circ", 45, function()
+        Sbar.animate("circ", 45, function()
             media_artist:set({ drawing = playing, label = { string = artist } })
             local max_len = math.max(#artist, #title)
             media_title:set({ drawing = playing, label = { string = title, align = "right" }})
@@ -206,7 +206,7 @@ local function refresh()
     end)
 end
 
-local watcher = SBAR.add("item", "media.watcher", {
+local watcher = Sbar.add("item", "media.watcher", {
     drawing     = false,
     position    = "right",
     updates     = true,
@@ -217,7 +217,7 @@ watcher:subscribe("routine", refresh)
 watcher:subscribe("forced", refresh)
 refresh()
 
-SBAR.add("item", "media.padding", {
+Sbar.add("item", "media.padding", {
     position = "right",
     width = settings.group_paddings
 })

@@ -1,7 +1,28 @@
 {
+    "preview_tabs": {
+        "enabled": false
+    },
+    "focus_follows_mouse": {
+        "enabled": true
+    },
+    "bottom_dock_layout": "contained",
+    "tabs": {
+        "show_close_button": "hidden",
+        "show_diagnostics": "off",
+        "file_icons": false,
+        "git_status": false
+    },
+    "gutter": {
+        "min_line_number_digits": 3,
+        "line_numbers": true
+    },
+    "helix_mode": false,
+    "cli_default_open_behavior": "existing_window",
     "code_lens": "on",
     "use_system_window_tabs": true,
     "title_bar": {
+        "show_project_items": true,
+        "show_branch_status_icon": false,
         "button_layout": "platform_default",
         "show_user_picture": false,
         "show_user_menu": true,
@@ -38,6 +59,12 @@
         "enable_diff": true,
     },
     "agent_servers": {
+        "gemini": {
+            "type": "registry"
+        },
+        "codex-acp": {
+            "type": "registry"
+        },
         "pi-acp": {
             "type": "registry",
         },
@@ -48,11 +75,85 @@
             },
         },
         "opencode": {
+            "favorite_config_option_values": {
+                "mode": [
+                    "build",
+                    "plan"
+                ]
+            },
             "type": "registry",
         },
     },
     "show_edit_predictions": false,
-    "ssh_connections": [],
+    "ssh_connections": [
+        {
+            "host": "194.87.118.148",
+            "username": "root",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/root"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/root/sotka"
+                    ]
+                }
+            ],
+            "nickname": "sotka-staging"
+        },
+        {
+            "host": "93.183.80.251",
+            "username": "root",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/root/sotka/./"
+                    ]
+                }
+            ],
+            "nickname": "sotka-prod"
+        },
+        {
+            "host": "94.141.162.113",
+            "username": "root",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/./"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/root/stack"
+                    ]
+                }
+            ],
+            "nickname": "sotka-infra"
+        },
+        {
+            "host": "193.124.47.58",
+            "username": "root",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/./"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/root"
+                    ]
+                }
+            ],
+            "nickname": "sotka-ci"
+        }
+    ],
     "hidden_files": [
         "**/.idea",
         "go.sum",
@@ -92,13 +193,13 @@
         "starts_open": true,
         "hide_hidden": true,
         "auto_reveal_entries": true,
-        "indent_size": 15.0,
+        "indent_size": 14.0,
         "git_status": true,
         "folder_icons": true,
         "file_icons": true,
-        "entry_spacing": "comfortable",
+        "entry_spacing": "standard",
         "hide_gitignore": false,
-        "default_width": 240.0,
+        "default_width": 200.0,
         "dock": "left",
     },
     "show_completion_documentation": true,
@@ -111,11 +212,13 @@
         "show_value_hints": true,
         "enabled": true,
     },
-    "lsp_document_colors": "border",
+    "lsp_document_colors": "inlay",
     "colorize_brackets": true,
     "indent_guides": {
+        "background_coloring": "disabled",
+        "coloring": "indent_aware",
         "active_line_width": 3,
-        "line_width": 2,
+        "line_width": 1,
     },
     "tab_size": 4,
     "scrollbar": {
@@ -140,11 +243,14 @@
         "include_warnings": true,
     },
     "icon_theme": {
-        "mode": "light",
-        "light": "Monospace Icon Theme - Dark",
-        "dark": "Monospace Icon Theme - Dark",
+        "mode": "dark",
+        "light": "Zed (Default)",
+        "dark": "Zed (Default)"
     },
     "terminal": {
+        "toolbar": {
+            "breadcrumbs": false
+        },
         "font_features": {
             "dlig": true,
             "cv59": true,
@@ -160,11 +266,11 @@
         "show_count_badge": false,
         "flexible": true,
         "default_height": 240.0,
-        "font_weight": 550.0,
-        "font_size": 13.0,
+        "font_weight": 450.0,
+        "font_size": 14.0,
         "dock": "bottom",
         "cursor_shape": "hollow",
-        "font_family": "GeistMono Nerd Font Mono",
+        "font_family": "Hack Nerd Font Mono",
         "line_height": "standard",
     },
     "search": {
@@ -177,19 +283,23 @@
         "metrics": false,
     },
     "tab_bar": {
+        "show_nav_history_buttons": false,
+        "show_tab_bar_buttons": false,
         "show_pinned_tabs_in_separate_row": false,
         "show": false,
     },
     "minimap": {
-        "show": "never",
+        "current_line_highlight": "all",
+        "thumb": "hover",
+        "show": "always",
     },
     "cursor_shape": "hollow",
     "cursor_blink": true,
     "current_line_highlight": "all",
     "autosave": "on_focus_change",
-    "ui_font_weight": 400.0,
-    "ui_font_family": ".SystemUIFont",
-    "ui_font_size": 13.0,
+    "ui_font_weight": 500.0,
+    "ui_font_family": "Geist",
+    "ui_font_size": 14.0,
     "ui_font_features": {
         "ss01": true,
         "ss02": true,
@@ -211,17 +321,20 @@
         "ss01": true,
     },
     "buffer_line_height": {
-        "custom": 1.2,
+        "custom": 1.3000000715255737,
     },
-    "buffer_font_size": 15.0,
-    "buffer_font_weight": 450.0,
+    "buffer_font_size": 14.0,
+    "buffer_font_weight": 500.0,
     "soft_wrap": "editor_width",
     "theme": {
         "mode": "dark",
         "light": "One Light",
-        "dark": "Zedokai Darker (Filter Spectrum)",
+        "dark": "shhhed",
     },
     "languages": {
+        "YAML": {
+            "tab_size": 2
+        },
         "JSON": {
             "show_edit_predictions": true,
         },
@@ -260,6 +373,7 @@
             "code_actions_on_format": {
                 "source.organizeImports.ruff": true,
                 "source.fixAll.ruff": true,
+                "source.fixAll.pyrefly": true,
             },
             "formatter": {
                 "language_server": {

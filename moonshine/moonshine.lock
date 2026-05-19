@@ -1,8 +1,224 @@
-generated_at: 2026-04-29T17:11:35.525709Z
+generated_at: 2026-05-09T15:08:47.889948Z
 mode: companion
 packages:
     brew:
         - name: node
+          version: 25.9.0_2
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:43.606976Z
+        - name: codex
           version: ""
           source: brew
-          installed_at: 2026-04-29T17:11:35.52542Z
+          installed_at: 2026-05-01T22:49:59.113406Z
+        - name: sf-symbols
+          version: ""
+          source: brew
+          installed_at: 2026-05-01T22:49:59.133315Z
+        - name: codex-app
+          version: ""
+          source: brew
+          installed_at: 2026-05-01T22:50:16.515178Z
+        - name: direnv
+          version: 2.37.1
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:02.291175Z
+        - name: gcc
+          version: 15.2.0_1
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:03.040406Z
+        - name: mas
+          version: 6.0.1
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:07.960627Z
+        - name: mise
+          version: 2026.4.24
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:14.77586Z
+        - name: nmap
+          version: "7.99"
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:15.577968Z
+        - name: protolint
+          version: 0.56.4
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:16.383028Z
+        - name: ruff
+          version: 0.15.12
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:17.221266Z
+        - name: carapace
+          version: 1.6.4
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:22.679396Z
+        - name: fzf
+          version: 0.72.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:23.491495Z
+        - name: gh
+          version: 2.92.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:24.324198Z
+        - name: just
+          version: 1.50.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:25.160523Z
+        - name: rust
+          version: 1.95.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:06:25.96452Z
+        - name: terror/tap/just-lsp
+          version: 0.4.3
+          source: terror/tap
+          installed_at: 2026-05-09T15:07:42.196535Z
+        - name: zsh-autosuggestions
+          version: 0.7.1
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:43.11093Z
+        - name: cmake
+          version: 4.3.2
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:43.923596Z
+        - name: ninja
+          version: 1.13.2
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:44.745739Z
+        - name: pyrefly
+          version: 0.63.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:50.27864Z
+        - name: qt@5
+          version: 5.15.18
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:51.098113Z
+        - name: tree
+          version: 2.3.2
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:51.87668Z
+        - name: zlib
+          version: 1.3.2
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:52.623995Z
+        - name: libvorbis
+          version: 1.3.7
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:53.395795Z
+        - name: minikube
+          version: 1.38.1
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:54.143449Z
+        - name: openjdk@21
+          version: 21.0.11
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:54.958476Z
+        - name: yq
+          version: 4.53.2
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:55.723608Z
+        - name: zsh-syntax-highlighting
+          version: 0.8.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:07:56.461302Z
+        - name: buf
+          version: 1.68.4
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:02.718573Z
+        - name: flac
+          version: 1.5.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:03.461178Z
+        - name: make
+          version: 4.4.1
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:04.200865Z
+        - name: p7zip
+          version: "17.06"
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:04.947143Z
+        - name: git
+          version: 2.54.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:05.678056Z
+        - name: gnupg
+          version: 2.5.19
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:06.449572Z
+        - name: nixfmt
+          version: 1.2.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:07.192018Z
+        - name: oven-sh/bun/bun
+          version: 1.3.13
+          source: oven-sh/bun
+          installed_at: 2026-05-09T15:08:07.836162Z
+        - name: goreleaser
+          version: 2.15.4
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:08.56568Z
+        - name: jq
+          version: 1.8.1
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:09.304222Z
+        - name: libpq
+          version: "18.3"
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:10.057685Z
+        - name: oh-my-posh
+          version: 29.11.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:15.556531Z
+        - name: portaudio
+          version: 19.7.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:16.368666Z
+        - name: tmux
+          version: 3.6a
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:17.148493Z
+        - name: uv
+          version: 0.11.8
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:22.454925Z
+        - name: go
+          version: 1.26.2
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:32.71236Z
+        - name: qt
+          version: 6.11.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:33.552253Z
+        - name: zoxide
+          version: 0.9.9
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:34.309409Z
+        - name: zsh
+          version: "5.9"
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:35.078148Z
+        - name: pyrorhythm/tap/moonshine
+          version: v0.3.0
+          source: pyrorhythm/tap
+          installed_at: 2026-05-09T15:08:35.782965Z
+        - name: felixkratz/formulae/borders
+          version: 1.8.4
+          source: felixkratz/formulae
+          installed_at: 2026-05-09T15:08:44.318936Z
+        - name: felixkratz/formulae/sketchybar
+          version: 2.23.0
+          source: felixkratz/formulae
+          installed_at: 2026-05-09T15:08:44.959048Z
+        - name: nowplaying-cli
+          version: 2.1.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:45.750253Z
+        - name: fastfetch
+          version: 2.62.1
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:46.489845Z
+        - name: acsandmann/tap/rift
+          version: 0.4.0
+          source: acsandmann/tap
+          installed_at: 2026-05-09T15:08:47.130026Z
+        - name: rustup
+          version: 1.29.0
+          source: homebrew/core
+          installed_at: 2026-05-09T15:08:47.889932Z

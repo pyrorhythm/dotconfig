@@ -2,20 +2,20 @@ local colors = require("colors")
 local icons = require("icons")
 local settings = require("settings")
 
-local menu_watcher = SBAR.add("item", {
+local menu_watcher = Sbar.add("item", {
   drawing = false,
   updates = false,
 })
-local space_menu_swap = SBAR.add("item", {
+local space_menu_swap = Sbar.add("item", {
   drawing = false,
   updates = true,
 })
-SBAR.add("event", "swap_menus_and_spaces")
+Sbar.add("event", "swap_menus_and_spaces")
 
 local max_items = 15
 local menu_items = {}
 for i = 1, max_items, 1 do
-  local menu = SBAR.add("item", "menu." .. i, {
+  local menu = Sbar.add("item", "menu." .. i, {
     padding_left = settings.paddings,
     padding_right = settings.paddings,
     drawing = false,
@@ -33,18 +33,18 @@ for i = 1, max_items, 1 do
   menu_items[i] = menu
 end
 
-SBAR.add("bracket", { '/menu\\..*/' }, {
+Sbar.add("bracket", { '/menu\\..*/' }, {
   background = { color = colors.bg1, border_color = colors.bg2, border_width = 1 }
 })
 
-local menu_padding = SBAR.add("item", "menu.padding", {
+local menu_padding = Sbar.add("item", "menu.padding", {
   drawing = false,
   width = 5
 })
 
 local function update_menus(env)
-  SBAR.exec("$CONFIG_DIR/helpers/menus/bin/menus -l", function(menus)
-    SBAR.set('/menu\\..*/', { drawing = false })
+  Sbar.exec("$CONFIG_DIR/helpers/menus/bin/menus -l", function(menus)
+    Sbar.set('/menu\\..*/', { drawing = false })
     menu_padding:set({ drawing = true })
     id = 1
     for menu in string.gmatch(menus, '[^\r\n]+') do
@@ -62,13 +62,13 @@ space_menu_swap:subscribe("swap_menus_and_spaces", function(env)
   local drawing = menu_items[1]:query().geometry.drawing == "on"
   if drawing then
     menu_watcher:set( { updates = false })
-    SBAR.set("/menu\\..*/", { drawing = false })
-    SBAR.set("/space\\..*/", { drawing = true })
-    SBAR.set("front_app", { drawing = true })
+    Sbar.set("/menu\\..*/", { drawing = false })
+    Sbar.set("/space\\..*/", { drawing = true })
+    Sbar.set("front_app", { drawing = true })
   else
     menu_watcher:set( { updates = true })
-    SBAR.set("/space\\..*/", { drawing = false })
-    SBAR.set("front_app", { drawing = false })
+    Sbar.set("/space\\..*/", { drawing = false })
+    Sbar.set("front_app", { drawing = false })
     update_menus()
   end
 end)

@@ -4,9 +4,9 @@ local settings = require("settings")
 
 -- Execute the event provider binary which provides the event "cpu_update" for
 -- the cpu load data, which is fired every 2.0 seconds.
-SBAR.exec("killall cpu_load >/dev/null; $CONFIG_DIR/helpers/event_providers/cpu_load/bin/cpu_load cpu_update 2.0")
+Sbar.exec("killall cpu_load >/dev/null; $CONFIG_DIR/helpers/event_providers/cpu_load/bin/cpu_load cpu_update 2.0")
 
-local cpu = SBAR.add("graph", "widgets.cpu" , 42, {
+local cpu = Sbar.add("graph", "widgets.cpu" , 42, {
   position = "right",
   graph = { color = colors.blue },
   background = {
@@ -55,12 +55,12 @@ cpu:subscribe("cpu_update", function(env)
   })
 end)
 
-SBAR.add("bracket", "widgets.cpu.bracket", { cpu.name }, {
+Sbar.add("bracket", "widgets.cpu.bracket", { cpu.name }, {
   background = { color         = colors.bg05,
   border_color  = colors.bg1, border_width = 1 }
 })
 
-SBAR.add("item", "widgets.cpu.padding", {
+Sbar.add("item", "widgets.cpu.padding", {
   position = "right",
   width = settings.group_paddings
 })

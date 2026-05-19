@@ -64,9 +64,13 @@ if command -v carapace >/dev/null 2>&1; then
   source <(carapace _carapace zsh)
 fi
 
+. "$HOME/.cargo/env"
+
 alias -- d=docker
 alias -- dc='docker compose'
 alias -- dcf='docker compose -f'
+
+alias -- da='direnv allow'
 
 if [[ -r /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

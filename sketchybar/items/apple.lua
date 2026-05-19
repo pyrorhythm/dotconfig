@@ -5,13 +5,12 @@ local colors = require("colors")
 local logger = require("helpers.logger")
 local settings = require("settings")
 
-
 local apple = {}
 
-apple.logo = SBAR.add("item", "apple.logo", {
+apple.logo = Sbar.add("item", "apple.logo", {
 	padding_left = 10,
     padding_right = 10,
-    y_offset = 2,
+    y_offset = 1,
 	icon = {
 		string = icons.apple,
 		font = {
@@ -31,7 +30,7 @@ apple.logo = SBAR.add("item", "apple.logo", {
 SETUP_POPUP(apple.logo)
 
 local function add_apple_item(name, icon_string, label_string, click_cmd)
-    local item = SBAR.add("item", "apple." .. name, {
+    local item = Sbar.add("item", "apple." .. name, {
 		position = "popup." .. apple.logo.name,
 		icon = {
 			string = icon_string,
@@ -58,7 +57,7 @@ local function add_apple_item(name, icon_string, label_string, click_cmd)
 
 	item:subscribe("mouse.clicked", function(_)
 		logger.debug("apple", "menu_item_clicked", { item = "apple." .. name })
-		SBAR.exec(click_cmd)
+		Sbar.exec(click_cmd)
 		apple.logo:set({ popup = { drawing = false } })
     end)
 

@@ -1,7 +1,7 @@
 local colors = require("colors")
 local icons = require("icons")
 
-local volume_slider = SBAR.add("slider", 100, {
+local volume_slider = Sbar.add("slider", 100, {
   position = "right",
   updates = true,
   label = { drawing = false },
@@ -23,7 +23,7 @@ local volume_slider = SBAR.add("slider", 100, {
   },
 })
 
-local volume_icon = SBAR.add("item", {
+local volume_icon = Sbar.add("item", {
   position = "right",
   icon = {
         string = icons.volume._100,
@@ -50,7 +50,7 @@ local volume_icon = SBAR.add("item", {
 })
 
 volume_slider:subscribe("mouse.clicked", function(env)
-  SBAR.exec("osascript -e 'set volume output volume " .. env["PERCENTAGE"] .. "'")
+  Sbar.exec("osascript -e 'set volume output volume " .. env["PERCENTAGE"] .. "'")
 end)
 
 volume_slider:subscribe("volume_change", function(env)
@@ -71,7 +71,7 @@ volume_slider:subscribe("volume_change", function(env)
 end)
 
 local function animate_slider_width(width)
-  SBAR.animate("tanh", 30.0, function()
+  Sbar.animate("tanh", 30.0, function()
     volume_slider:set({ slider = { width = width }})
   end)
 end

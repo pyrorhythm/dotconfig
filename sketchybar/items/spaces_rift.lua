@@ -20,7 +20,7 @@ local function name_app(i, j) return "rift.ws." .. i .. ".app." .. j end
 local function name_brk(i) return "rift.ws." .. i .. ".bracket" end
 
 local function make_num(i)
-    local item = SBAR.add("item", name_num(i), {
+    local item = Sbar.add("item", name_num(i), {
         drawing = false,
         icon = {
             string        = tostring(i + 1),
@@ -43,7 +43,7 @@ local function make_num(i)
 end
 
 local function make_app(i, j)
-    return SBAR.add("item", name_app(i, j), {
+    return Sbar.add("item", name_app(i, j), {
         drawing       = false,
         icon          = { drawing = false },
         label         = { drawing = false },
@@ -57,7 +57,7 @@ local function make_app(i, j)
 end
 
 local function make_bracket(i, members)
-    return SBAR.add("bracket", name_brk(i), members, {
+    return Sbar.add("bracket", name_brk(i), members, {
         blur_radius = 12,
         background  = {
             drawing       = true,
@@ -158,10 +158,10 @@ local function refresh()
     render(ws_list)
 end
 
-SBAR.delay(0.5, function()
+Sbar.delay(0.5, function()
     build_pool()
 
-    local watcher = SBAR.add("item", "rift.watcher", {
+    local watcher = Sbar.add("item", "rift.watcher", {
         drawing       = false,
         padding_left  = 0,
         padding_right = 0,
@@ -170,11 +170,11 @@ SBAR.delay(0.5, function()
     watcher:subscribe(
         { "front_app_switched", "space_change", "system_woke", "forced" },
         function(_)
-            SBAR.animate("circ", 30, refresh)
+            Sbar.animate("circ", 30, refresh)
         end
     )
 
-    rift.subscribe({ "*" }, function(_) SBAR.animate("circ", 30, refresh) end)
+    rift.subscribe({ "*" }, function(_) Sbar.animate("circ", 30, refresh) end)
 
     refresh()
 end)

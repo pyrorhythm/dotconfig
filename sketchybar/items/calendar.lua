@@ -2,9 +2,9 @@ local settings = require("settings")
 local colors = require("colors")
 
 -- Padding item required because of bracket
-SBAR.add("item", { position = "right", width = settings.group_paddings })
+Sbar.add("item", { position = "right", width = settings.group_paddings })
 
-local cal = SBAR.add("item", {
+local cal = Sbar.add("item", {
   icon = {
     color = colors.white,
     padding_left = 8,
@@ -35,7 +35,7 @@ local cal = SBAR.add("item", {
 })
 
 -- Double border for calendar using a single item bracket
-SBAR.add("bracket", { cal.name }, {
+Sbar.add("bracket", { cal.name }, {
   background = {
     color = colors.transparent,
     height = 30,
@@ -44,7 +44,7 @@ SBAR.add("bracket", { cal.name }, {
 })
 
 -- Padding item required because of bracket
-SBAR.add("item", { position = "right", width = settings.group_paddings })
+Sbar.add("item", { position = "right", width = settings.group_paddings })
 
 cal:subscribe({ "forced", "routine", "system_woke" }, function(env)
   cal:set({ icon = os.date("%a. %d %b."), label = os.date("%H:%M") })

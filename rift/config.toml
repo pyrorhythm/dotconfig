@@ -2,7 +2,7 @@
 animate = true
 animation_duration = 0.3
 animation_fps = 165.0
-default_disable = true
+default_disable = false
 focus_follows_mouse = true
 mouse_follows_focus = false
 mouse_hides_on_focus = true

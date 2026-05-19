@@ -1,0 +1,75 @@
+# ============================================================================
+# skhd.zig keybindings (https://github.com/jackielii/skhd.zig)
+# Converted from ~/.config/rift/config.toml [keys]
+#
+# skhd.zig is a drop-in for the original skhd config format plus extras used
+# below:
+#   - .shell                    — pick a fast non-interactive shell
+#   - .alias                    — modifier / key aliases
+#   - .define <name> : <cmd>    — reusable command templates with {{N}} args
+#   - modes (`:: name`) and submodes with command-on-enter
+# Modifier mapping: rift "Alt" -> skhd "alt" (macOS Option ⌥)
+# ============================================================================
+
+.shell "/bin/dash"
+
+.define yfocus  : yabai -m window --focus {{1}} || yabai -m display --focus {{1}}
+.define ymove   : yabai -m window --warp  {{1}} || yabai -m window --swap   {{1}}
+.define yspace  : yabai -m space  --focus {{1}}
+.define ytospc  : yabai -m window --space {{1}} && yabai -m space --focus {{1}}
+.define yinsert : yabai -m window --insert {{1}}
+.define yresize : yabai -m window --resize {{1}}:{{2}}:{{3}}
+
+alt - h : @yfocus("west")
+alt - j : @yfocus("south")
+alt - k : @yfocus("north")
+alt - l : @yfocus("east")
+
+alt + shift - h : @ymove("west")
+alt + shift - j : @ymove("south")
+alt + shift - k : @ymove("north")
+alt + shift - l : @ymove("east")
+
+alt - 1 : @yspace("1")
+alt - 2 : @yspace("2")
+alt - 3 : @yspace("3")
+alt - 4 : @yspace("4")
+alt - 5 : @yspace("5")
+alt - 6 : @yspace("6")
+
+alt + shift - 1 : @ytospc("1")
+alt + shift - 2 : @ytospc("2")
+alt + shift - 3 : @ytospc("3")
+alt + shift - 4 : @ytospc("4")
+alt + shift - 5 : @ytospc("5")
+alt + shift - 6 : @ytospc("6")
+
+alt - tab : yabai -m space --focus recent
+
+alt + shift - left  : @yinsert("west")
+alt + shift - right : @yinsert("east")
+alt + shift - up    : @yinsert("north")
+alt + shift - down  : @yinsert("south")
+
+alt + ctrl - e : yabai -m space --balance
+
+alt + shift - space        : yabai -m window --toggle float --grid 6:6:1:1:4:4
+
+alt + shift + ctrl - space : yabai -m query --windows --space \
+    | jq -re '[.[] | select(."is-floating" == true)] | .[0].id' \
+    | xargs -I{} yabai -m window --focus {}
+
+alt + shift - f : yabai -m window --toggle zoom-fullscreen
+
+alt + shift - 0x18 : yabai -m window --resize right:60:0  || yabai -m window --resize left:-60:0    # "="
+alt + shift - 0x1B : yabai -m window --resize right:-60:0 || yabai -m window --resize left:60:0     # "-"
+
+:: resize  @ : echo -n "orange" | nc -4u -w0 localhost 1738 2>/dev/null
+:: default   : echo -n "hollow" | nc -4u -w0 localhost 1738 2>/dev/null
+
+alt + ctrl - r ; resize
+resize < h : @yresize("left",   "-40", "0")
+resize < l : @yresize("right",   "40", "0")
+resize < j : @yresize("bottom",   "0", "40")
+resize < k : @yresize("top",      "0", "-40")
+resize < escape ; default
