@@ -54,3 +54,7 @@ brew:
     - sourcegit
     - neovim
     - nvm
+    - forgejo-cli
+    - name: fresh-editor
+      tap: sinelaw/fresh
+    - cursor

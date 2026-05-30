@@ -1,4 +1,5 @@
 {
+    "proxy": "",
     "preview_tabs": {
         "enabled": false
     },
@@ -30,7 +31,7 @@
         "show_branch_name": true,
     },
     "debugger": {
-        "button": false,
+        "button": true,
     },
     "status_bar": {
         "show_active_file": false,
@@ -152,6 +153,23 @@
                 }
             ],
             "nickname": "sotka-ci"
+        },
+        {
+            "host": "188.225.47.115",
+            "username": "root",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/"
+                    ]
+                },
+                {
+                    "paths": [
+                        "/root"
+                    ]
+                }
+            ]
         }
     ],
     "hidden_files": [
@@ -173,7 +191,7 @@
     },
     "collaboration_panel": {
         "dock": "right",
-        "button": false,
+        "button": true,
     },
     "git_panel": {
         "file_icons": true,
@@ -346,7 +364,7 @@
             "show_edit_predictions": false,
         },
         "Go": {
-            "show_edit_predictions": false,
+            "show_edit_predictions": true,
             "format_on_save": "on",
             "language_servers": ["gopls", "golangci-lint"],
             "code_actions_on_format": {
@@ -355,6 +373,7 @@
             },
         },
         "Python": {
+            "show_edit_predictions": true,
             "tab_size": 2,
             "indent_guides": {
                 "background_coloring": "disabled",
@@ -369,7 +388,7 @@
                 "show_other_hints": true,
                 "enabled": true,
             },
-            "language_servers": ["pyrefly", "ruff", "!ty"],
+            "language_servers": ["ruff", "!ty"],
             "code_actions_on_format": {
                 "source.organizeImports.ruff": true,
                 "source.fixAll.ruff": true,

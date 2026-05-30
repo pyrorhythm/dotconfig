@@ -40,5 +40,17 @@
     "unbind": {
       "cmd-shift-i": "editor::Format"
     }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "alt-c": "editor::AcceptEditPrediction"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "unbind": {
+      "alt-tab": "editor::AcceptEditPrediction"
+    }
   }
 ]

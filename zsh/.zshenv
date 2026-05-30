@@ -7,6 +7,7 @@ path=(
   "$HOME/.cargo/bin"
   /opt/homebrew/bin
   /opt/homebrew/sbin
+  "$HOME/.mint/bin"
   $path
 )
 
